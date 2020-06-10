@@ -1,4 +1,4 @@
-#!/bin/bash
+#include <stdio.h>
    /**
     *main - Prints a specified string
     *
