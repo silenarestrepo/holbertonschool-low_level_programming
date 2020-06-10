@@ -6,10 +6,10 @@ int main() {
   char charType;
 
   // sizeof evaluates the size of a variable
-  printf("Size of int: %ld bytes\n", sizeof(intType));
-  printf("Size of float: %ld bytes\n", sizeof(floatType));
-  printf("Size of double: %ld bytes\n", sizeof(doubleType));
-  printf("Size of char: %ld byte\n", sizeof(charType));
+  printf("Size of int: %lu bytes\n", sizeof(intType));
+  printf("Size of float: %lu bytes\n", sizeof(floatType));
+  printf("Size of double: %lu bytes\n", sizeof(doubleType));
+  printf("Size of char: %lu byte\n", sizeof(charType));
     
   return 0;
 }
