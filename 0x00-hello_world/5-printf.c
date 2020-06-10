@@ -1,4 +1,4 @@
-#!/bin/bash
+#include <stdio.h>
 /**
  * main - use printf typeof
  * Description: output with printf
