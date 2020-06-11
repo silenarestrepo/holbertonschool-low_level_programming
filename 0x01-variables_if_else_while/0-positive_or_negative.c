@@ -1,14 +1,21 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
+#include <stdlib.h>
 
-/* betty style doc for function main goes there */
-int main(void)
+/**
+ *main -Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+ int main(void)
 {
 	int n;
+        char *positive = "positive\n";
+	char *negative = "negative\n";
+	char *zero = "zero\n";
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	/* your code goes there */
+	printf("%d is %s", n, n == 0 ? zero : n > 0 ? positive : negative);
 	return (0);
 }
