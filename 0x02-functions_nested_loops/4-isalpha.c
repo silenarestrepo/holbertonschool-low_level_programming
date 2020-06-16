@@ -1,14 +1,13 @@
 #include "holberton.h"
 /**
- * _islower - write a function that chfecks for lowercase characters.
- * @c: The character to print
+ * _isalpha - Checks if input character is alphacharacter
+ * @c: letter to be checked
  *
- * Return: On success 1.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: 1 for alpha, 0 for non-alpha
  */
 int _isalpha(int c);
 {
-if (c >= 65 && c <= 90 || c >= 97 && c <= 122)
+if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 {
 return (1);
 }
