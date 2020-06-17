@@ -18,7 +18,7 @@ while (row < 10)
 {
 _putchar(',');
 _putchar(' ');
-sum = column * row, t = sum / 10;
+sum = column *row, t = sum / 10;
 if (sum < 10)
 {
 _putchar(' ');
