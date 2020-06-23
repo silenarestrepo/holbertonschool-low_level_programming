@@ -1,42 +1,41 @@
 #include "holberton.h"
-
 /**
- * is_num - checks if it is a digit
- * @n: Number
- * Return: If it is a number, retrun 1 else return 0
+ * isnum - checks if this variable is a number.
+ * @a: variables num
+ *
+ * Return: returns (1) if it's true
  */
-int is_num(unsigned int n)
+int isnum(int a)
 {
-	return (n >= '0' && n <= '9');
+	return (a >= '0' && a <= '9');
 }
 
 /**
- * _atoi - convert a string to a number
- * @s: String to be converted
- * Return: returns the number
+ * _atoi - converts from string to integer.
+ * @s: pointer string.
+ * Return: the number that was converted.
  */
 int _atoi(char *s)
 {
-	unsigned int num, i;
+	unsigned int res, i;
+
 	int sign;
 
 	sign = 1;
-	num = 0;
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		if (is_num(s[i]))
+	res = 0;
 
-		{
-			num = (s[i] - '0') + num * 10;
-		}
-		if (s[i + 1] == ' ')
-		{
-			break;
-		}
-		else if (s[i] == '-')
+	for (i = 0; s[i] != '\0'; ++i)
+	{
+		if (s[i] == '-')
 		{
 			sign *= -1;
 		}
+		if (isnum(s[i]))
+		{
+			res = (res * 10 + s[i] - '0');
+			if (s[i + 1] == ' ')
+				break;
+		}
 	}
-	return (num * sign);
+	return (res * sign);
 }
