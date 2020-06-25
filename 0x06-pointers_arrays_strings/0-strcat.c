@@ -3,7 +3,6 @@
  * _strcat - concatenate two strings
  * @dest: variable where the string will be stored
  * @src: variable that will store the second string
- * @n: variable that contains the length of the bytes used
  * Return: in progress
  */
 char *_strcat(char *dest, char *src)
