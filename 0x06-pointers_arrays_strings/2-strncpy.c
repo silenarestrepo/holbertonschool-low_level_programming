@@ -4,7 +4,7 @@
  * @dest: variable where string will be copied
  * @src: variable that will provide a string
  * @n: size limit of bytes to be copied
- * Return: Always 0.
+ * Return: dest
  */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -18,7 +18,7 @@ cont++;
 while (cont < n)
 {
 dest[cont] = '\0';
-count++;
+cont++;
 }
 return (dest);
 }
