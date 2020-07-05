@@ -1,0 +1,489 @@
+!<arch>
+0-isupper.c/    1593912857  1000  1000  100664  209       `
+#include "holberton.h"
+
+/**
+ * _isupper - checks for uppercase letters
+ * @c: the character to be checked
+ * Return: 1 if uppercase and, 0 otherwise
+ */
+int _isupper(int c)
+{
+	return (c >= 'A' && c <= 'Z');
+}
+
+0-memset.c/     1593909186  1000  1000  100664  450       `
+#include "holberton.h"
+
+/**
+ * _memset - fill memory with a constant byte
+ *           pointed to by @s with the constant byte @b.
+ * @s: A pointer to the memory area to be filled.
+ * @b: The character to fill the memory area with.
+ * @n: The number of bytes to be filled.
+ *
+ * Return: A pointer to the filled memory area @s.
+ */
+
+char *_memset(char *s, char b, unsigned int n)
+{
+unsigned int i;
+for (i = 0; i < n; i++)
+*(s + i) = b;
+
+return (s);
+}
+0-strcat.c/     1593909235  1000  1000  100764  444       `
+#include "holberton.h"
+/**
+ * _strcat - concatenate two strings
+ * @dest: variable where the string will be stored
+ * @src: variable that will store the second string
+ * Return: in progress
+ */
+char *_strcat(char *dest, char *src)
+{
+	int dest_c = 0;
+	int src_c = 0;
+
+	while (dest[dest_c] != '\0')
+	{
+		dest_c++;
+	}
+
+	while (src[src_c] != '\0')
+	{
+		dest[dest_c] = src[src_c];
+		src_c++;
+		dest_c++;
+	}
+
+	dest[dest_c] = '\0';
+
+	return (dest);
+}
+100-atoi.c/     1593909393  1000  1000  100664  588       `
+#include "holberton.h"
+/**
+ * isnum - checks if this variable is a number.
+ * @a: variables num
+ *
+ * Return: returns (1) if it's true
+ */
+int isnum(int a)
+{
+	return (a >= '0' && a <= '9');
+}
+
+/**
+ * _atoi - converts from string to integer.
+ * @s: pointer string.
+ * Return: the number that was converted.
+ */
+int _atoi(char *s)
+{
+	unsigned int res, i;
+
+	int sign;
+
+	sign = 1;
+	res = 0;
+
+	for (i = 0; s[i] != '\0'; ++i)
+	{
+		if (s[i] == '-')
+		{
+			sign *= -1;
+		}
+		if (isnum(s[i]))
+		{
+			res = (res * 10 + s[i] - '0');
+			if (s[i + 1] == ' ')
+				break;
+		}
+	}
+	return (res * sign);
+}
+1-isdigit.c/    1593909269  1000  1000  100664  226       `
+#include "holberton.h"
+
+/**
+ * _isdigit - checks for a digit
+ * @c: character to be checked
+ * Return: 1 if c is a digit and 0 otherwise
+ */
+int _isdigit(int c)
+{
+if (c >= 48 && c <= 57)
+{
+return (1);
+}
+else
+{
+return (0);
+}
+}
+1-memcpy.c/     1593909301  1000  1000  100664  336       `
+#include "holberton.h"
+
+/**
+ * _memcpy - copy n bytes from src to dest
+ * @dest: destination pointer
+ * @src: source pointer
+ * @n: number of bytes to copy
+ *
+ * Return: pointer to dest
+ */
+
+char *_memcpy(char *dest, char *src, unsigned int n)
+{
+
+	unsigned int i = 0;
+
+	while (i < n)
+	{
+
+	dest[i] = src[i];
+	i++;
+
+	}
+
+	return (dest);
+}
+1-strncat.c/    1593909358  1000  1000  100664  527       `
+#include "holberton.h"
+/**
+ * _strncat - concatenates two strings
+ * @dest: varibale where final string will be stored
+ * @src: variable where string to be added will be stored
+ * @n: variable containing the limit of bytes to be used
+ * Return: *ptrdes
+ */
+
+char *_strncat(char *dest, char *src, int n)
+{
+int dest_c;
+int src_c;
+
+dest_c = 0;
+src_c = 0;
+
+while (dest[dest_c] != '\0')
+{
+dest_c++;
+}
+while (src[src_c] != '\0' && src_c < n)
+{
+dest[dest_c] = src[src_c];
+dest_c++;
+src_c++;
+}
+
+dest[dest_c] = '\0';
+
+return (dest);
+
+}
+
+2-strchr.c/     1593909423  1000  1000  100664  378       `
+#include "holberton.h"
+
+/**
+ * *_strchr - locate a char in a string
+ * @s: string to be searched
+ * @c: char to be found
+ * Return: return a pointer to the
+ * first occurence of the character
+ */
+char *_strchr(char *s, char c)
+{
+	int a;
+
+	for (a = 0; s[a] != '\0'; a++)
+	{
+		if (s[a] == c)
+		{
+			s = &s[a];
+			return (s);
+		}
+	}
+	if (c == '\0')
+	return (&s[a]);
+	return (0);
+}
+2-strlen.c/     1593909461  1000  1000  100664  215       `
+#include "holberton.h"
+
+/**
+ * _strlen - returns the length of a string
+ * @s: integer used
+ * Return: length of string
+ */
+
+int _strlen(char *s)
+{
+	int a;
+
+	a = 0;
+	while (s[a] != '\0')
+	{
+		a++;
+	}
+	return (a);
+}
+
+2-strncpy.c/    1593909593  1000  1000  100664  431       `
+#include "holberton.h"
+
+/**
+ * _strncpy - copy a string
+ * @dest: variable where string will be copied
+ * @src: variable that will provide a string
+ * @n: size limit of bytes to be copied
+ * Return: dest
+ */
+
+char *_strncpy(char *dest, char *src, int n)
+{
+	int cont;
+	cont = 0;
+
+	while (src[cont] != '\0' && cont < n)
+	{
+	dest[cont] = src[cont];
+		cont++;
+	}
+	while (cont < n)
+	{
+	dest[cont] = '\0';
+		cont++;
+	}
+	return (dest);
+}
+
+3-islower.c/    1593909666  1000  1000  100664  318       `
+#include "holberton.h"
+
+/**
+ * _islower - write a function that chfecks for lowercase characters.
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+
+int _islower(int c)
+{
+	if (c >= 97 && c <= 122)
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+3-puts.c/       1593909701  1000  1000  100664  180       `
+#include <stdio.h>
+
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Success)
+ */
+
+int main(void)
+{
+	puts("\"Programming is like building a multilingual puzzle");
+		return (0);
+}
+3-strcmp.c/     1593909745  1000  1000  100664  426       `
+#include "holberton.h"
+/**
+ * _strcmp - compare two strings
+ * @s1: string one
+ * @s2: string two
+ * Return: returns an integer less  than,  equal  to,  or
+ * greater  than zero if s1 is found, respectively, to be
+ * less than, to match, or be greater than s2.
+ */
+int _strcmp(char *s1, char *s2)
+{
+char *p1 = s1;
+	char *p2 = s2;
+
+	while (*p1 != '\0' && *p2 != '\0' && *p1 == *p2)
+	{
+		p1++;
+		p2++;
+	}
+	return (*p1 - *p2);
+}
+3-strspn.c/     1593909799  1000  1000  100664  571       `
+#include "holberton.h"
+
+/**
+ * _strspn - calculates the length of the initial segment
+ * of str1 which consists entirely of characters in str2.
+ * @s: The main string to be scanned.
+ * @accept: The list of characters to match in s.
+ *
+ * Return: return the length
+ */
+
+unsigned int _strspn(char *s, char *accept)
+{
+	unsigned int s_count, a_count;
+
+	for (s_count = 0; s[s_count] != '\0'; s_count++)
+	{
+		for (a_count = 0; accept[a_count] != '\0'; a_count++)
+			if (s[s_count] == accept[a_count])
+				break;
+		if (accept[a_count] == '\0')
+			break;
+	}
+	return (s_count);
+}
+
+4-isalpha.c/    1593909857  1000  1000  100664  286       `
+#include "holberton.h"
+/**
+ * _isalpha - Checks if input character is alphacharacter
+ * @c: letter to be checked
+ *
+ * Return: 1 for alpha, 0 for non-alpha
+ */
+int _isalpha(int c)
+
+{
+	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+	{
+		return (1);
+	}
+	else
+	{
+		return (0);
+	}
+}
+4-strpbrk.c/    1593909904  1000  1000  100664  486       `
+#include "holberton.h"
+
+/**
+ * _strpbrk - Search the first occurence of any of the bytes in *accept.
+ * @s: Travel this string.
+ * @accept: bytes to read the occurence in s.
+ *
+ * Return: return the first occurence.
+ */
+
+char *_strpbrk(char *s, char *accept)
+{
+
+	unsigned int s_count, a_count;
+
+	for (s_count = 0; s[s_count] != '\0'; s_count++)
+	{
+		for (a_count = 0; accept[a_count] != '\0'; a_count++)
+			if (s[s_count] == accept[a_count])
+				return (&s[s_count]);
+	}
+	return (0);
+}
+5-strstr.c/     1593913187  1000  1000  100664  517       `
+#include "holberton.h"
+#include <stdio.h>
+
+/**
+ * *_strstr - locates a substring
+ * @haystack: string to search in
+ * @needle: substring to look for
+ *
+ * Return: pointer to the beginning of the located substring
+ * or NULL if the substring is not found
+ */
+char *_strstr(char *haystack, char *needle)
+{
+	int i, j;
+
+	for (i = 0; haystack[i] != '\0'; i++)
+	{
+		for (j = 0; needle[j] != '\0'; j++)
+		{
+			if (haystack[i + j] != needle[j])
+				break;
+		}
+		if (!needle[j])
+			return (&haystack[i]);
+	}
+	return (NULL);
+}
+
+6-abs.c/        1593910023  1000  1000  100664  248       `
+#include "holberton.h"
+
+/**
+ * _abs - takes number and returns absolute value of that number
+ * @i: number to be check
+ *
+ * Return: Absolute value of integer
+ */
+
+int _abs(int i)
+	{
+	if (i >= 0)
+	{
+		return (i);
+	}
+	else
+	{
+		return (0 - i);
+	}
+}
+9-strcpy.c/     1593910093  1000  1000  100664  349       `
+#include "holberton.h"
+
+/**
+ * *_strcpy - copies a string pointed to by src to dest
+ * @src: variale where string will be copied from
+ * @dest: variable that string will be copied to
+ * Return: dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int p;
+
+	for (p = 0; src[p] != '\0'; p++)
+	{
+		dest[p] = src[p];
+	}
+	dest[p] = '\0';
+
+		return (dest);
+}
+
+main.c/         1593910447  1000  1000  100664  153       `
+#include "holberton.h"
+
+int main(void)
+{
+    _puts("\"At the end of the day, my goal was to be the best hacker\"\n\t- Kevin Mitnick");
+    return (0);
+}
+
+_putchar.c/     1593912954  1000  1000  100664  247       `
+#include <unistd.h>
+
+/**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: On success 1.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
