@@ -3,14 +3,14 @@
 #include <stdlib.h>
 
 /**
- * _strdup - returns a pointer to a newly allocated space in memory,
- *           containing a copy of the string given as a parameter
- * @str: pointer containing the string to be duplicated
- * Return: pointer to the copied string if success, NULL if error
+ * _strdup - returns a pointer to a newly allocated space in memory, 
+             which contains a copy of the string given as a parameter
+ * @str: pointer containing string to be duplicated
+ * Return: pointer to the copied string (success), NULL if error
  */
 char *_strdup(char *str)
 {
-	unsigned int a, b;
+	unsigned int i, j;
 	char *ptr;
 
 	if (str == NULL)
@@ -18,19 +18,19 @@ char *_strdup(char *str)
 		return (NULL);
 	}
 
-	a = 0;
-	while (str[a] != 0)
-		b++;
+	i = 0;
+	while (str[i] != 0)
+		i++;
 
-	ptr = malloc(sizeof(char) * (a + 1));
+	ptr = malloc(sizeof(char) * (i + 1));
 
 	if (ptr == NULL)
 	{
 		return (NULL);
 	}
-	b = 0;
-	while ((ptr[b] = str[b]) != '\0')
-		b++;
+	j = 0;
+	while ((ptr[j] = str[j]) != '\0')
+		j++;
 
 	return (ptr);
 }
