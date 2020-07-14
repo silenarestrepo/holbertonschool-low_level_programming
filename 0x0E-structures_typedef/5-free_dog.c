@@ -1,16 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "dog.h"
-
- /**
- * free_dog - frees the allocated memory for dog struct
- * @d: pointer to struct 
+/**
+ * free_dog - It frees the dog.
+ * @d: Pointer to struct.
+ *
+ * Return: It does not return.
  */
-
 void free_dog(dog_t *d)
 {
-	if (d != NULL)
-	{	
+	if (d)
+	{
 		free(d->name);
 		free(d->owner);
 		free(d);
