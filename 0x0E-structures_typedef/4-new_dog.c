@@ -36,30 +36,30 @@ void my_strcpy(char *to, char *from)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	unsigned int name_len = my_strlen(name), owner_len = my_strlen(owner);
-	dog_t *gucci;
+	dog_t *snoop_dogg;
 
-	gucci = malloc(sizeof(dog_t));
-	if (gucci)
+	snoop_dogg = malloc(sizeof(dog_t));
+	if (snoop_dogg)
 	{
-		gucci->name = malloc(sizeof(char) * (name_len + 1));
-		if (gucci->name)
+		snoop_dogg->name = malloc(sizeof(char) * (name_len + 1));
+		if (snoop_dogg->name)
 		{
-			gucci->owner = malloc(sizeof(char) * (owner_len + 1));
-			if (gucci->owner)
+			snoop_dogg->owner = malloc(sizeof(char) * (owner_len + 1));
+			if (snoop_dogg->owner)
 			{
-				my_strcpy(gucci->name, name);
-				gucci->age = age;
-				my_strcpy(gucci->owner, owner);
-				return (gucci);
+				my_strcpy(snoop_dogg->name, name);
+				snoop_dogg->age = age;
+				my_strcpy(snoop_dogg->owner, owner);
+				return (snoop_dogg);
 			}
 			else
 			{
-				free(gucci);
-				free(gucci);
+				free(snoop_dogg->name);
+				free(snoop_dogg);
 			}
 		}
 		else
-			free(gucci);
+			free(snoop_dogg);
 	}
 	return (NULL);
 }
