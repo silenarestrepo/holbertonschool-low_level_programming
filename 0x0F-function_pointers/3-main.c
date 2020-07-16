@@ -1,28 +1,32 @@
 #include "3-calc.h"
 
 /**
- * main - calls the functions for operations to be done
- * @argc: number of arguments
- * @argv: arguments
+ * main - calls functions for calculator
+ * @argc: number of arguements
+ * @argv: arguements
+ * Return: a number as result
  *
- * Return: a number as a result
  */
-
-int main(int ac, char **av)
+int main(int argc, char *argv[])
 {
-	if (ac != 4)
+	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-
-	if (get_op_func(av[2]) == NULL || av[2][1])
+	if (argv[2][1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-
-	printf("%i\n", get_op_func(av[2])(atoi(av[1]), atoi(av[3])));
-
+	if (get_op_func(argv[2]) == NULL)
+	{
+		printf("Error\n");
+		exit(99);
+	}
+	else
+	{
+		printf("%i\n", get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3])));
+	}
 	return (0);
 }
