@@ -2,12 +2,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 
- /**
- * print_strings - prints strings separated by separator
- * @separator: string to be printed between the strings
- * @n: number of strings passed to the function
- * Return: nothing
- */
+/**
+*print_strings - print strings
+*@separator: pointer constant
+*@n: variable constant
+*Return: void
+*/
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
@@ -15,8 +15,6 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	unsigned int i = 0;
 	char *string;
 
-	if (separator == NULL)
-		return;
 	va_start(ab, n);
 	string = va_arg(ab, char*);
 
@@ -28,7 +26,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 		printf("%s", string);
 	string = va_arg(ab, char*);
 
-	if (i < (n - 1))
+	if (i != (n - 1) && separator != NULL)
 	printf("%s", separator);
 	}
 	printf("\n");
