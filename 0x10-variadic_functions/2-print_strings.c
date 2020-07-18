@@ -2,12 +2,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 
- /**
- *print_strings - print strings
- *@separator: pointer constant
- *@n: variable constant
- *Return: void
- */
+/**
+*print_strings - print strings
+*@separator: pointer constant
+*@n: variable constant
+*Return: void
+*/
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
