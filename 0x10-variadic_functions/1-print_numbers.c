@@ -2,12 +2,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 
- /**
- * print_numbers - prints integers separated by separator
- * @separator: string to be printed between numbers
- * @n: number of integers passed to the function
- * Return: nothing
- */
+/**
+*print_numbers - function
+*@separator: variable constant
+*@n: variable constant
+*Return: 0
+*/
 
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
