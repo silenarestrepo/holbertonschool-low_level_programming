@@ -2,10 +2,10 @@
 #include <stdarg.h>
 #include <stdio.h>
 
- /**
- * sum_them_all - sums all its parameters
- * @n: number of arguments given
- * Return: the sum
+/**
+ * sum_them_all - functions
+ *@n: variable constant
+ *Return: 0 or sum
  */
 
 int sum_them_all(const unsigned int n, ...)

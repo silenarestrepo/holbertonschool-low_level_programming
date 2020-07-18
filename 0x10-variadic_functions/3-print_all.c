@@ -4,10 +4,7 @@
 
  /**
  * print_all - prints anything
- * @c: char
- * @i: integer
- * @f: float
- * @s: pointer to char
+ * @format: list of argument typesj
  */
 
 void print_all(const char * const format, ...)
