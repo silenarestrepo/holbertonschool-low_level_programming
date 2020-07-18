@@ -2,12 +2,12 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-/**
-*print_strings - print strings
-*@separator: pointer constant
-*@n: variable constant
-*Return: void
-*/
+ /**
+ *print_strings - print strings
+ *@separator: pointer constant
+ *@n: variable constant
+ *Return: void
+ */
 
 void print_strings(const char *separator, const unsigned int n, ...)
 {
@@ -16,12 +16,12 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	char *string;
 
 	va_start(ab, n);
-	string = va_arg(ab, char*);
 
+	string = va_arg(ab, char*);
 	for (i = 0; i < n; i++)
 	{
 		if (string == NULL)
-			printf("%s", ("nil"));
+			printf(("nil"));
 		else
 			printf("%s", string);
 
