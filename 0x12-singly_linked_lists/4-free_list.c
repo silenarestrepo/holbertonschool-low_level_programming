@@ -1,9 +1,8 @@
 #include "lists.h"
 
 /**
- * list_t - frees a list
- * @head: head of the list
- * Return: nothing
+ * free_list - frees the structure
+ * @head: the head of the structure
  */
 
 void free_list(list_t *head)
