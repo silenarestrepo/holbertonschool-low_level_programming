@@ -3,7 +3,7 @@
 /**
  * add_dnodeint_end - adds a new node at the end of a list.
  * @head: head of list
- * @n: asd
+ * @n: new node
  * Return: address of the new element
  */
 
@@ -14,7 +14,7 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 
 	last_node = malloc(sizeof(dlistint_t));
 	temp_node = *head;
-	if (temp_node == NULL)
+	if (last_node == NULL)
 		return (NULL);
 
 	last_node->n = n;
