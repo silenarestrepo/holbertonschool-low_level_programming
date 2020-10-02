@@ -12,7 +12,7 @@ hash_table_t *new_ht;
 if (size == 0)
 return (NULL);
 new_ht = malloc(sizeof(hash_table_t));
-if (new == 0)
+if (new_ht == 0)
 return (NULL);
 new_ht->array = malloc(sizeof(hash_node_t *) * size);
 if (new_ht->array == NULL)
